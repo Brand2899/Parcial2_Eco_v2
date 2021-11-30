@@ -1,0 +1,29 @@
+{
+  "name": "parcial2_eco_v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --watch --progress",
+    "visualize-main": "webpack --analyze"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brand2899/Parcial2_Eco_v2.git"
+  },
+  "author": "Alejandro Brand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brand2899/Parcial2_Eco_v2/issues"
+  },
+  "homepage": "https://github.com/Brand2899/Parcial2_Eco_v2#readme",
+  "dependencies": {
+    "firebase": "^9.5.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  }
+}
