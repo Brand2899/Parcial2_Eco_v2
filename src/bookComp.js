@@ -17,7 +17,7 @@ export class bookComp{
         bookName.innerHTML = this.book.bookName;
 
         // Puntaje del libro
-        let scoreBook = document.createElement('h3');
+        let scoreBook = document.createElement('h1');
         scoreBook.className = "bookScore";
         scoreBook.innerHTML = this.book.score;
 

@@ -1,14 +1,82 @@
 .component{
-    background-color: blanchedalmond;
-    height: 100px;
+    background-color:whitesmoke;
+    height: 60px;
     width: 20%;
     border-radius: 10px;
+    padding-bottom: 10px;
+    position: relative;
 
     margin: 0 auto;
 }
 
 .component *{
-    margin: 5px 16px 5px 16px; 
-    padding: 3px;
+    margin: 10px 10px 10px 10px; 
     color: rgb(59, 59, 59);
+}
+
+.bookName{
+    color: slategrey;
+    text-align: left;
+}
+
+.bookScore{
+    color: slategrey;
+    position: absolute;
+    right: 0%;
+    bottom: 25%;
+}
+
+.bn_1Star{
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    background-color: gold;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: slategrey;
+}
+
+.bn_2Star{
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    background-color: gold;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: slategrey;
+}
+
+.bn_3Star{
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    background-color: gold;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: slategrey;
+}
+
+.bn_4Star{
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    background-color: gold;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: slategrey;
+}
+
+.bn_5Star{
+    height: 25px;
+    width: 25px;
+    padding: 1px;
+    background-color: gold;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: slategrey;
 }
