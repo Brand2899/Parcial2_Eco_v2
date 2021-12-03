@@ -53,12 +53,10 @@ export class bookComp{
         // Evento sumar puntaje
         // 1 Estrella
         bn1Star.addEventListener("click", (e, ev) => {
-            var scoreNow = parseInt(scoreBook);
-
             const db = getDatabase();
-            const dbref = push(ref(db, 'books/' + this.book.id + '/score'));
-
-            set(dbref, (scoreNow + 1)/numVotesBook);
+            const dbRef = ref(db, 'students/' + this.book.id + '/score');
+            var valueNew = parseInt(scoreBook + 1);
+            set(dbRef, valueNew);
         });
 
         // 2 Estrella
