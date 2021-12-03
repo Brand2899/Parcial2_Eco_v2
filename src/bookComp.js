@@ -12,14 +12,17 @@ export class bookComp{
 
 
         // Nombre del libro
-        let bookName = document.createElement("p");
+        let bookName = document.createElement("h4");
         bookName.className = "bookName";
         bookName.innerHTML = this.book.bookName;
 
         // Puntaje del libro
-        let scoreBook = document.createElement('h4');
+        let scoreBook = document.createElement('h3');
         scoreBook.className = "bookScore";
         scoreBook.innerHTML = this.book.score;
+
+        // Numero de votos
+        let numVotesBook = this.book.num_votes;
 
         // Boton 1 estrella
         let bn1Star = document.createElement('button');
@@ -50,41 +53,41 @@ export class bookComp{
         // Evento sumar puntaje
         // 1 Estrella
         bn1Star.addEventListener("click", (e, ev) => {
+            var scoreNow = parseInt(scoreBook);
+
             const db = getDatabase();
+            const dbref = push(ref(db, 'books/' + this.book.id + '/score'));
 
-            const dbRef = ref(db, 'books/' + this.book.id + '/num_votes');
-            set(dbRef, this.book.numVotes + 1);
-
-            const dbref = ref(db, 'books/' + this.book.id + '/score');
-            set(dbref, (this.books.score + 1)/this.book.numVotes);
+            set(dbref, (scoreNow + 1)/numVotesBook);
         });
 
         // 2 Estrella
-        bn1Star.addEventListener("click", (e, ev) => {
-            const db = getDatabase();
-            const dbref = ref(db, 'books/' + this.book.id + '/score');
-            set(dbref, (this.books.score + 2)/this.book.numVotes);
+        bn2Star.addEventListener("click", (e, ev) => {
+            if(isNaN(this.book.scoreBook)){
+                console.log("Oh no 2");
+            }
         });
 
         // 3 Estrella
-        bn1Star.addEventListener("click", (e, ev) => {
-            const db = getDatabase();
-            const dbref = ref(db, 'books/' + this.book.id + '/score');
-            set(dbref, (this.books.score + 3)/this.book.numVotes);
+        bn3Star.addEventListener("click", (e, ev) => {
+            if(isNaN(this.book.scoreBook)){
+                console.log("Oh no 3");
+            }
         });
 
         // 4 Estrella
-        bn1Star.addEventListener("click", (e, ev) => {
-            const db = getDatabase();
-            const dbref = ref(db, 'books/' + this.book.id + '/score');
-            set(dbref, (this.books.score + 4)/this.book.numVotes);
+        bn4Star.addEventListener("click", (e, ev) => {
+            if(isNaN(this.book.scoreBook)){
+                console.log("Oh no 4");
+            }
+            return;
         });
 
         // 5 Estrella
-        bn1Star.addEventListener("click", (e, ev) => {
-            const db = getDatabase();
-            const dbref = ref(db, 'books/' + this.book.id + '/score');
-            set(dbref, (this.books.score + 5)/this.book.numVotes);
+        bn5Star.addEventListener("click", (e, ev) => {
+            if(isNaN(this.book.scoreBook)){
+                console.log("Oh no 5");
+            }
         });
 
         comp.appendChild(bookName);
