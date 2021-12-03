@@ -12,38 +12,38 @@ export class bookComp{
 
 
         // Nombre del libro
-        let nameBook = document.createElement("p");
-        nameBook = className = "bookName";
-        nameBook.innerHTML = this.book.nameBook;
+        let bookName = document.createElement("p");
+        bookName.className = "bookName";
+        bookName.innerHTML = this.book.bookName;
 
         // Puntaje del libro
         let scoreBook = document.createElement('h4');
-        scoreBook = className = "bookScore";
-        scoreBook.innerHTML = this.book.scoreBook;
+        scoreBook.className = "bookScore";
+        scoreBook.innerHTML = this.book.score;
 
         // Boton 1 estrella
         let bn1Star = document.createElement('button');
-        bn1Star = className = "bn_1Star";
+        bn1Star.className = "bn_1Star";
         bn1Star.innerHTML = "1";
 
         // Boton 2 estrella
         let bn2Star = document.createElement('button');
-        bn2Star = className = "bn_2Star";
+        bn2Star.className = "bn_2Star";
         bn2Star.innerHTML = "2";
 
         // Boton 3 estrella
         let bn3Star = document.createElement('button');
-        bn3Star = className = "bn_3Star";
+        bn3Star.className = "bn_3Star";
         bn3Star.innerHTML = "3";
 
         // Boton 4 estrella
         let bn4Star = document.createElement('button');
-        bn4Star = className = "bn_4Star";
+        bn4Star.className = "bn_4Star";
         bn4Star.innerHTML = "4";
 
         // Boton 5 estrella
         let bn5Star = document.createElement('button');
-        bn5Star = className = "bn_5Star";
+        bn5Star.className = "bn_5Star";
         bn5Star.innerHTML = "5";
 
         
@@ -51,6 +51,10 @@ export class bookComp{
         // 1 Estrella
         bn1Star.addEventListener("click", (e, ev) => {
             const db = getDatabase();
+
+            const dbRef = ref(db, 'books/' + this.book.id + '/num_votes');
+            set(dbRef, this.book.numVotes + 1);
+
             const dbref = ref(db, 'books/' + this.book.id + '/score');
             set(dbref, (this.books.score + 1)/this.book.numVotes);
         });
@@ -82,5 +86,16 @@ export class bookComp{
             const dbref = ref(db, 'books/' + this.book.id + '/score');
             set(dbref, (this.books.score + 5)/this.book.numVotes);
         });
+
+        comp.appendChild(bookName);
+        comp.appendChild(scoreBook);
+
+        comp.appendChild(bn1Star);
+        comp.appendChild(bn2Star);
+        comp.appendChild(bn3Star);
+        comp.appendChild(bn4Star);
+        comp.appendChild(bn5Star);
+
+        return comp;
     }
 }
