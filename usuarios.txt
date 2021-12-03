@@ -1,0 +1,7 @@
+correo	|| contraseña
+
+1. prueba1@email.com	|| 123456789
+2. prueba2@correo.com	|| 123456789
+3. prueba3@correo.com	|| 123456
+4. prueba4@correo.com	|| 123456
+5. prueba5@correo.com	|| 123456
